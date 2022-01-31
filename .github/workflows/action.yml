@@ -27,3 +27,9 @@ jobs:
         git config --local user.name "zhiyi98"
         git add test.txt
         git commit -m "update test.txt"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
