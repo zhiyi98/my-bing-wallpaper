@@ -40,8 +40,8 @@ jobs:
         node index.js
         git config --local user.email "742801893@qq.com"
         git config --local user.name "zhiyi98"
-        git add test.txt
-        git commit -m "update test.txt"
+        git add README.md
+        git commit -m "update README.md"
 
     #=====================================================================================#
     # Push changes
