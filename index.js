@@ -1,7 +1,7 @@
-// console.log("helloworld");
-// console.log("helloworld");
-// console.log("helloworld");
-// console.log("helloworld");
+console.log("helloworld");
+console.log("helloworld");
+console.log("helloworld");
+console.log("helloworld");
 
 // const fs = require("fs");
 
@@ -23,6 +23,7 @@ async function start() {
   const img = await page.evaluate(() => {
     return "https://cn.bing.com" + document.querySelector("body > div.hpapp > div > div:nth-child(1) > div").style.backgroundImage.split('"')[1]
   })
+  console.log(img)
   // 写到txt文件里
   const data = new Date().toLocaleDateString() + "\n" + "![](" + img + ")\n";
   await fs.writeFile("README.md", data, { 'flag': "a+" }, (err) => {
