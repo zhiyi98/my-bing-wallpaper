@@ -19,12 +19,12 @@ async function start() {
   const browser = await puppeteer.launch(/*{ headless: false }*/);
   const page = await browser.newPage();
   await page.goto("https://cn.bing.com/");  
-  page.waitForSelector("body > div.hpapp > div > div:nth-child(1) > div");
+  await page.waitForSelector("body > div.hpapp > div > div:nth-child(1) > div");
   const img = await page.evaluate(() => {
     return "https://cn.bing.com" + document.querySelector("body > div.hpapp > div > div:nth-child(1) > div").style.backgroundImage.split('"')[1]
   })
   console.log(img)
-  // 写到txt文件里
+  // 写到文件里
   const data = new Date().toLocaleDateString() + "\n" + "![](" + img + ")\n";
   await fs.writeFile("README.md", data, { 'flag': "a+" }, (err) => {
     if (err) console.log("err");
