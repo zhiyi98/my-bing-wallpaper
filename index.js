@@ -23,7 +23,7 @@ async function start() {
     data.unshift(img_data);
     let content = addImg(data);
 
-    fs.writeFile("README1.md", content, (err) => {
+    fs.writeFile("README.md", content, (err) => {
       if (err) console.log(err)
       console.log("done!")
     })
