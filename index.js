@@ -11,7 +11,7 @@ async function start() {
   const img = await page.evaluate(() => {
     return "https://cn.bing.com" + document.querySelector("body > div.hpapp > div > div:nth-child(1) > div").style.backgroundImage.split('"')[1]
   })
-  // console.log(img)
+  console.log(img)
 
   // 添加到markdown里的格式
   const img_data = "![](" + img + ")" + new Date().toLocaleDateString();
